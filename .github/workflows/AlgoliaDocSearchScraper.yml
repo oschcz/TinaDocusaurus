@@ -1,19 +1,24 @@
-name: Algolia Indexer
+name: <action_name>
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
-  algolia_indexer:
+  upload_algolia_index:
     runs-on: ubuntu-latest
-    env:
-      APPLICATION_ID: '2NR3GMOKDP'
-      API_KEY: 'eaf33e5fceded83858579d69cdc337bb'
-      INDEX_NAME: 'tina-docusaurus' # example.com
-      CONFIG: '{"index_name":"tina-docusaurus","start_urls":["https://tina-docusaurus.vercel.app/"],"sitemap_urls":["https://tina-docusaurus.vercel.app/sitemap.xml"],"sitemap_alternate_links":true,"stop_urls":[],"selectors":{"lvl0":{"selector":"(//ul[contains(@class,'menu__list')]//a[contains(@class,'menu__linkmenu__link--sublistmenu__link--active')]/text()|//nav[contains(@class,'navbar')]//a[contains(@class,'navbar__link--active')]/text())[last()]","type":"xpath","global":true,"default_value":"Documentation"},"lvl1":"headerh1","lvl2":"articleh2","lvl3":"articleh3","lvl4":"articleh4","lvl5":"articleh5,articletd:first-child","lvl6":"articleh6","text":"articlep,articleli,articletd:last-child"},"strip_chars":".,;:#","custom_settings":{"separatorsToIndex":"_","attributesForFaceting":["language","version","type","docusaurus_tag"],"attributesToRetrieve":["hierarchy","content","anchor","url","url_without_anchor","type"]},"conversation_id":["833762294"],"nb_hits":16653}'
-    name: Index Algolia
+    name: Update Algolia Index
     steps:
-    - name: Algolia Docsearch Action
-      id: algolia
-      uses:  adapttive/algolia-docsearch-action@1.1.1
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: tilburgsciencehub/algolia-uploader@master
+      with:
+        # Algolia app id
+        app_id: '2NR3GMOKDP'
+        # Secret token in the organization's 'Setting > Secrets'
+        admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+        # The index name
+        index_name: 'tina-docusaurus'
+        # The index file path relative to repo root.
+        index_file_path: algolia.json
