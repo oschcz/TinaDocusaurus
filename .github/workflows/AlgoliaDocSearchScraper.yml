@@ -1,24 +1,24 @@
-name: <action_name>
-
-on:
-  push:
-    branches: [ main ]
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
-  upload_algolia_index:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    name: Update Algolia Index
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - uses: tilburgsciencehub/algolia-uploader@master
-      with:
-        # Algolia app id
-        app_id: '2NR3GMOKDP'
-        # Secret token in the organization's 'Setting > Secrets'
-        admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-        # The index name
-        index_name: 'tina-docusaurus'
-        # The index file path relative to repo root.
-        index_file_path: algolia.json
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v2
+      - uses: darrenjennings/algolia-docsearch-action@master
+        with:
+          algolia_application_id: '2NR3GMOKDP'
+          algolia_api_key: 'eaf33e5fceded83858579d69cdc337bb'
+          file: 'algolia.json'
