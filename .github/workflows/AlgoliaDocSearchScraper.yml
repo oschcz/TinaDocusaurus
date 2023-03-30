@@ -2,7 +2,7 @@ name: Algolia Indexer
 
 on:
   push:
-    branches: [ MAIN ]
+    branches: [ main ]
 
 jobs:
   algolia_indexer:
