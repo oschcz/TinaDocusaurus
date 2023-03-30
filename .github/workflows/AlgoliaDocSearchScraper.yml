@@ -2,7 +2,7 @@ name: <action_name>
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   upload_algolia_index:
