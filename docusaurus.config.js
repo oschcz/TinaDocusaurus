@@ -124,6 +124,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '2NR3GMOKDP',
+
+        // Public API key: it is safe to commit it
+        apiKey: 'eaf33e5fceded83858579d69cdc337bb',
+
+        indexName: 'tina-docusaurus'
+      },
       navbar: {
         title: docusaurusData.title || "",
         logo: {
