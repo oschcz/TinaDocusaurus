@@ -1,13 +1,14 @@
-name: Algolia Indexer
-
+name: Algolia Upload Records
 on:
-  push:
-    branches: [ main ]
-
+  [push]
 jobs:
-  - uses: rxrw/algolia-index-uploader@v1
-  with:
-    index_path: "algolia.json"
-    algolia_index_id: "2NR3GMOKDP"
-    algolia_index_name: "tina-docusaurus"
-    algolia_index_admin_key: "d14cce60885421e78fd7a878cc3733b8"
+  algolia:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Algolia Docsearch Uploader
+        uses: guzhongren/algolia-docsearch-upload-action@v2.0.0
+        env:
+          FILE_PATH: "./algolia.json"
+          APPLICATION_ID: ${{secrets.ALGOLIA_APPLICATION_ID}}
+          ADMIN_API_KEY: ${{secrets.ALGOLIA_API_KEY}}
+          INDEX_NAME: "tina-docusaurus"
