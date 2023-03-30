@@ -129,7 +129,7 @@ const config = {
         appId: 'HNYJ6EB10V',
 
         // Public API key: it is safe to commit it
-        apiKey: '498f595c9ea2b1ab8edfe72b6259b660',
+        apiKey: '3d03020e77326f9ff42b27c530c008eb',
 
         indexName: 'asientosimple'
       },
