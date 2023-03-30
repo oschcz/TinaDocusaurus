@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Algolia Docsearch Uploader
         uses: guzhongren/algolia-docsearch-upload-action@v2.0.0
-        uses: actions/checkout@v2
+        
         env:
           FILE_PATH: "./algolia.json"
           APPLICATION_ID: "2NR3GMOKDP"
