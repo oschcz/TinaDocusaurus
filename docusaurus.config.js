@@ -126,12 +126,12 @@ const config = {
     ({
       algolia: {
         // The application ID provided by Algolia
-        appId: '2NR3GMOKDP',
+        appId: 'HNYJ6EB10V',
 
         // Public API key: it is safe to commit it
-        apiKey: 'eaf33e5fceded83858579d69cdc337bb',
+        apiKey: '498f595c9ea2b1ab8edfe72b6259b660',
 
-        indexName: 'tina-docusaurus'
+        indexName: 'asientosimple'
       },
       navbar: {
         title: docusaurusData.title || "",
