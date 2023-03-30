@@ -9,6 +9,6 @@ jobs:
         uses: guzhongren/algolia-docsearch-upload-action@v2.0.0
         env:
           FILE_PATH: "./algolia.json"
-          APPLICATION_ID: ${{secrets.ALGOLIA_APPLICATION_ID}}
-          ADMIN_API_KEY: ${{secrets.ALGOLIA_API_KEY}}
+          APPLICATION_ID: "2NR3GMOKDP"
+          ADMIN_API_KEY: "eaf33e5fceded83858579d69cdc337bb"
           INDEX_NAME: "tina-docusaurus"
