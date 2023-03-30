@@ -9,7 +9,7 @@ jobs:
         uses: guzhongren/algolia-docsearch-upload-action@v2.0.0
         
         env:
-          FILE_PATH: "./algolia.json"
+          FILE_PATH: "https://github.com/oschcz/TinaDocusaurus/blob/main/algolia.json"
           APPLICATION_ID: "2NR3GMOKDP"
           ADMIN_API_KEY: "d14cce60885421e78fd7a878cc3733b8"
           INDEX_NAME: "tina-docusaurus"
