@@ -11,7 +11,7 @@ jobs:
       APPLICATION_ID: '2NR3GMOKDP'
       API_KEY:  'eaf33e5fceded83858579d69cdc337bb'
       INDEX_NAME: 'tina-docusaurus' # example.com
-      CONFIG: '{"index_name":"example.com","start_urls":[{"url":"https://example.com/blog","selectors_key":"blog"}],"selectors":{"blog":{"lvl0":"h1","lvl1":"h2","lvl2":"h3","lvl3":"h4","lvl4":"h5","lvl5":"#description","text":"#content"}}}'
+      CONFIG: '{"index_name":"tina-docusaurus","start_urls":[{"url":"https://tina-docusaurus.vercel.app/blog","selectors_key":"blog"}],"selectors":{"blog":{"lvl0":"h1","lvl1":"h2","lvl2":"h3","lvl3":"h4","lvl4":"h5","lvl5":"#description","text":"#content"}}}'
     name: Index Algolia
     steps:
     - name: Algolia Docsearch Action
