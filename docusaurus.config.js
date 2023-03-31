@@ -100,6 +100,13 @@ const config = {
     defaultLocale: "es",
     locales: ["es"],
   },
+  plugins: [require.resolve("@cmfcmf/docusaurus-search-local"),
+    {
+    language: "es",
+    indexDocSidebarParentCategories: 3,
+    indexPages: true,
+    }]
+  ,
 
   presets: [
     [
@@ -124,15 +131,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      algolia: {
-        // The application ID provided by Algolia
-        appId: 'HNYJ6EB10V',
-
-        // Public API key: it is safe to commit it
-        apiKey: '3d03020e77326f9ff42b27c530c008eb',
-
-        indexName: 'asientosimple'
-      },
+      
       navbar: {
         title: docusaurusData.title || "",
         logo: {
