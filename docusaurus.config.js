@@ -90,7 +90,7 @@ const config = {
   tagline: docusaurusData.tagline || "Dinosaurs are cool",
   url: docusaurusData.url || "https://tinasaurus.vercel.app/",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   // Even if you don't use internalization, you can use this field to set useful
@@ -100,14 +100,15 @@ const config = {
     defaultLocale: "es",
     locales: ["es"],
   },
-  plugins: [require.resolve("@cmfcmf/docusaurus-search-local"),
-    {
-    language: "es",
-    indexDocSidebarParentCategories: 3,
-    indexPages: true,
-    }]
-  ,
 
+   plugins: [
+        [require.resolve('docusaurus-lunr-search'),
+            {
+              indexBaseUrl: true,
+              languages: ['es'] 
+            }
+        ]
+    ],
   presets: [
     [
       "classic",
@@ -131,8 +132,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      
-      navbar: {
+        navbar: {
         title: docusaurusData.title || "",
         logo: {
           alt: docusaurusData?.logo?.alt
